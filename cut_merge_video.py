@@ -1,17 +1,19 @@
 from tkinter import *
 
+import tkinter.filedialog
+
+
 root = Tk()
 root.title("Larry")
 root.geometry("600x400")
-#实例化Button，使用command选项关联一个函数，点击按钮则执行该函数
-#button = Button(root,text='这是一个按钮',fg='red',command=onclick)
 
-
-def choiceVideoFile():
-	pass
+def getVideo():
+    videoName = tkinter.filedialog.askopenfilename()#返回文件名
+    print(videoName)
+    return videoName
 
 def cut():
-	pass
+	print(sTime)
 
 def merge():
 	pass
@@ -27,7 +29,7 @@ l2 = Label(frame2, text = "视频文件 :", font ="20")
 l2.pack(side = LEFT, fill = X, pady = 10)
 e1 = Entry(frame2, bg = 'gray', font ="20")
 e1.pack(side = LEFT)
-b1 = Button(frame2, text = '选择视频文件', command = choiceVideoFile)
+b1 = Button(frame2, text = '选择视频文件', command = getVideo)
 b1.pack(side = LEFT)
 
 
@@ -37,6 +39,7 @@ l3 = Label(frame3, text = '视频片段: From')
 l3.pack(side = LEFT)
 e2 = Entry(frame3, bg = 'gray', font ="20")
 e2.pack(side = LEFT)
+sTime = e2.get()
 l4 = Label(frame3, text = 'To')
 l4.pack(side = LEFT)
 e3 = Entry(frame3, bg = 'gray', font ="20")
@@ -54,6 +57,10 @@ b3.pack()
 
 root.mainloop()
                        
+
+
+
+
 
 
                              
