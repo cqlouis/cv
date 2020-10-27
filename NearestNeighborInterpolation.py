@@ -60,3 +60,5 @@ def test( w, h, img = 'F:/rafa.jpg'):
     cv2.destroyAllWindows()
 
 test(1950, 1008)
+
+
